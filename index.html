@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projectile Motion Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Projectile Motion Visualizer</h1>
+      <p class="subtitle">Real-time classical kinematics simulation</p>
+    </header>
+
+    <main class="main-layout">
+      <section class="controls-panel">
+        <h2>Parameters</h2>
+
+        <div class="control-group">
+          <label for="velocity">Initial Velocity (v₀): <span id="val-velocity">45</span> m/s</label>
+          <input type="range" id="velocity" min="5" max="100" value="45">
+        </div>
+
+        <div class="control-group">
+          <label for="angle">Launch Angle (θ): <span id="val-angle">45</span>°</label>
+          <input type="range" id="angle" min="5" max="85" value="45">
+        </div>
+
+        <div class="control-group">
+          <label for="gravity">Gravity (g): <span id="val-gravity">9.8</span> m/s²</label>
+          <select id="gravity">
+            <option value="9.8">Earth (9.8 m/s²)</option>
+            <option value="1.62">Moon (1.62 m/s²)</option>
+            <option value="3.71">Mars (3.71 m/s²)</option>
+            <option value="24.79">Jupiter (24.79 m/s²)</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="btn-launch" class="btn btn-primary">🚀 Launch</button>
+          <button id="btn-clear" class="btn btn-secondary">Clear Canvas</button>
+        </div>
+
+        <hr class="divider">
+
+        <h2>Theoretical Telemetry</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Flight Time</span>
+            <span class="stat-value" id="stat-time">0.00 s</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Max Height (H)</span>
+            <span class="stat-value" id="stat-height">0.00 m</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Total Range (R)</span>
+            <span class="stat-value" id="stat-range">0.00 m</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="canvas-panel">
+        <canvas id="simCanvas" width="800" height="500"></canvas>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
